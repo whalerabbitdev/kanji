@@ -13,17 +13,15 @@
 <script>
 	fetch('datas/家.json')
     .then(response => {
-      if (!response.ok) {
-        throw new Error('파일을 불러오는 중 오류 발생: ' + response.status);
-      }
-      return response.json();
+		if (!response.ok)
+        	throw new Error('파일을 불러오는 중 오류 발생: ' + response.status);
+      	
+      	return response.json();
     })
     .then(data => {
-      console.log('불러온 JSON:', data);
-      // 예: 화면에 표시
-      document.body.insertAdjacentHTML('beforeend', `<pre>${JSON.stringify(data, null, 2)}</pre>`);
+		console.log('불러온 JSON:', data);
     })
     .catch(error => {
-      console.error(error);
+      	console.error(error);
     });
 </script>
